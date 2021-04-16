@@ -1,6 +1,7 @@
 ---
 layout: post
 title: First Post
+category: random
 ---
 
 # This is a header 1
