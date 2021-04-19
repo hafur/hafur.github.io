@@ -12,4 +12,4 @@ Why am I mentioning this? Well, my domin provider of choice [one.com](https://ww
 In my previous post, I described how I am revaluating my current set up. The first step is to decouple my homepage, i.e. the webserver for my domaon provider. I will use Oracle Cloud Infrastructure to host my web server and create an DNS A-Record to point my domain to the IP address of that web server.
 This is what it will look like:
 
-![Future Architecture](images/homepage.png) 
+![Future Architecture](/assets/homepage.png) 
