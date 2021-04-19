@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Self-hosting for more Flexibility" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price." />
-<meta property="og:description" content="Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price." />
+<meta name="description" content="Every company is adjusting services and products they are offering - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price." />
+<meta property="og:description" content="Every company is adjusting services and products they are offering - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price." />
 <link rel="canonical" href="/2020/02/28/Homepage-Automation-on-OCI.html" />
 <meta property="og:url" content="/2020/02/28/Homepage-Automation-on-OCI.html" />
 <meta property="og:site_name" content="delphi.hafur.com" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Self-hosting for more Flexibility" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/02/28/Homepage-Automation-on-OCI.html"},"headline":"Self-hosting for more Flexibility","dateModified":"2020-02-28T00:00:00+00:00","datePublished":"2020-02-28T00:00:00+00:00","url":"/2020/02/28/Homepage-Automation-on-OCI.html","description":"Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price.","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/02/28/Homepage-Automation-on-OCI.html"},"headline":"Self-hosting for more Flexibility","dateModified":"2020-02-28T00:00:00+00:00","datePublished":"2020-02-28T00:00:00+00:00","url":"/2020/02/28/Homepage-Automation-on-OCI.html","description":"Every company is adjusting services and products they are offering - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="delphi.hafur.com" /></head>
 <body><header class="site-header" role="banner">
@@ -47,15 +47,19 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price.</p>
+    <p>Every company is adjusting services and products they are offering - usually that comes at a price, namely the actual <em>value for what you get</em>. Usually, you get less value for the same price.</p>
 
 <p>Companies like to reduce the content but maintain the same price. There are websites in Germany which document this behaviour, for example <a href="https://www.vzhh.de/themen/mogelpackungen/weniger-drin-preis-gleich-die-neuesten-mogelpackungen">VZHH</a>.</p>
 
 <p>Why am I mentioning this? Well, my domin provider of choice <a href="https://www.one.com">one.com</a> is guilty of the same unfortunate behaviour. I have been a customer for over 15 years and I have seen changes and adjustments to their services - which is normal. Unfortunately, with every adjustment it seems I am losing more and more functionality to an extend where I am questioning the price-value ratio.
-In my previous post, I described how I am revaluating my current set up. The first step is to decouple my homepage, i.e. the webserver for my domaon provider. I will use Oracle Cloud Infrastructure to host my web server and create an DNS A-Record to point my domain to the IP address of that web server.
+In my previous post, I described how I am revaluating my current set up. The first step is to decouple my homepage, i.e. the webserver from my domain provider. I will use Oracle Cloud Infrastructure to host my web server and create an DNS A-Record to point my domain to the IP address of that web server.
 This is what it will look like:</p>
 
 <p><img src="/assets/homepage.png" alt="Future Architecture" /></p>
+
+<p>In the next few posts, I will describe the process of migrating my homepage to a web server which I have to maintain. This includes setting up the network, securing the whole server and the webpage, etc.</p>
+
+<p>First step: Get the virtual machine up and running.!</p>
 
   </div><a class="u-url" href="/2020/02/28/Homepage-Automation-on-OCI.html" hidden></a>
 </article>
