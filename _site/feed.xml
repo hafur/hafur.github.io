@@ -1,1 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-04-19T06:50:52+00:00</updated><id>/feed.xml</id><title type="html">delphi.hafur.com</title><subtitle>Random thoughts about random stuff.</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-04-19T09:13:42+00:00</updated><id>/feed.xml</id><title type="html">delphi.hafur.com</title><subtitle>Random thoughts about random stuff.</subtitle><entry><title type="html">Self-hosting for more Flexibility</title><link href="/2020/02/28/Homepage-Automation-on-OCI.html" rel="alternate" type="text/html" title="Self-hosting for more Flexibility" /><published>2020-02-28T00:00:00+00:00</published><updated>2020-02-28T00:00:00+00:00</updated><id>/2020/02/28/Homepage-Automation-on-OCI</id><content type="html" xml:base="/2020/02/28/Homepage-Automation-on-OCI.html">&lt;p&gt;Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price.&lt;/p&gt;
+
+&lt;p&gt;Companies like to reduce the content but maintain the same price. There are websites in Germany which document this behaviour, for example &lt;a href=&quot;https://www.vzhh.de/themen/mogelpackungen/weniger-drin-preis-gleich-die-neuesten-mogelpackungen&quot;&gt;VZHH&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Why am I mentioning this? Well, my domin provider of choice &lt;a href=&quot;https://www.one.com&quot;&gt;one.com&lt;/a&gt; is guilty of the same unfortunate behaviour. I have been a customer for over 15 years and I have seen changes and adjustments to their services - which is normal. Unfortunately, with every adjustment it seems I am losing more and more functionality to an extend where I am questioning the price-value ratio.
+In my previous post, I described how I am revaluating my current set up. The first step is to decouple my homepage, i.e. the webserver for my domaon provider. I will use Oracle Cloud Infrastructure to host my web server and create an DNS A-Record to point my domain to the IP address of that web server.
+This is what it will look like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/homepage.png&quot; alt=&quot;Future Architecture&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="cloud" /><summary type="html">Every company is adjusting services and products - usually that comes at a price, namely the actual value for what you get. Usually, you get less value for the same price.</summary></entry><entry><title type="html">What do I really need?</title><link href="/2020/02/24/What-I-need-from-my-domain-provider.html" rel="alternate" type="text/html" title="What do I really need?" /><published>2020-02-24T00:00:00+00:00</published><updated>2020-02-24T00:00:00+00:00</updated><id>/2020/02/24/What-I-need-from-my-domain-provider</id><content type="html" xml:base="/2020/02/24/What-I-need-from-my-domain-provider.html">&lt;p&gt;I started looking into the services that my domain provider offers me. With their latest service ‘optimization’, I lost the capability to log into my server using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Maybe it is time to switch to a new provider. But what do I actually need?
+Mandatory:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Email
+    &lt;ul&gt;
+      &lt;li&gt;Aliases. I use a lot of aliases and this is a must&lt;/li&gt;
+      &lt;li&gt;Acocunts. I do not need 100 but up to 10 shuld be sufficient&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Server
+    &lt;ul&gt;
+      &lt;li&gt;ssh access&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Management
+    &lt;ul&gt;
+      &lt;li&gt;DNS management that includes A-record, CNAME, MX records, etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nice to have:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SSL certificates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;No need for:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;website builder&lt;/li&gt;
+  &lt;li&gt;online shop&lt;/li&gt;
+  &lt;li&gt;analytics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Looking at the above list, I have quite simple and straight-forward requirements which mainly focus around email.
+DNS management and ssh access is an interesting point: I do not need necessarily ssh access if I have full acces to the DNS configuration because I can point my domain to any IP, i.e. any server (for which I actually have ssh access).&lt;/p&gt;
+
+&lt;p&gt;It is a bit daring since I would be responsible to keep that server up-and-running, make sure that patches are applied, etc. Now I am not running a business so I can live with the fact that my homepage might not be available 24x7 on 365 days a year.&lt;/p&gt;
+
+&lt;p&gt;I guess the only way of knowing what this all means is actuyally tryign it out. 
+Oracle offers has an &lt;a href=&quot;https://www.oracle.com/cloud/free/&quot;&gt;‘Always Free’&lt;/a&gt; offer which might be one piece of my overall revisit of what I actually need from a domain provider.
+I get (among other things) two virtual machines from Oracle for free.&lt;/p&gt;
+
+&lt;p&gt;So - next steps are:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Get an Oracle ‘always free’ cloud account&lt;/li&gt;
+  &lt;li&gt;Set up a web server in OCI&lt;/li&gt;
+  &lt;li&gt;Update the A-records of my domain provider&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;…and then we see how all of that goes…&lt;/p&gt;</content><author><name></name></author><category term="cloud oracle" /><summary type="html">I started looking into the services that my domain provider offers me. With their latest service ‘optimization’, I lost the capability to log into my server using ssh.</summary></entry></feed>
