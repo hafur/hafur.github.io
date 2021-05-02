@@ -9,7 +9,7 @@ Oracle is offering an 'Always free' account which comes with 2 VMs, a couple of 
 But first things first: Lets start with one VM first
 
 ## Technical Details
-There are a bunch of tutorials out there which describe how to set up a VM in OCI. It is no rocket science whatssoever. You need a Virtual Cloud Network (which can be set up automatically during the provisioning of the VM) and of you go. 
+There are a bunch of tutorials out there which describe how to set up a VM in OCI. It is no rocket science whatsoever. You need a Virtual Cloud Network (which can be set up automatically during the provisioning of the VM) and of you go. 
 One thing to note though: I have used my own ssh key in the configuration process and did not opt for the option where Oracle provide
 
 Let me give you an idea of what my OCI webserver comprises:
@@ -26,7 +26,7 @@ This is what the rule table looks like after I added my rules for port 80 and 44
 
 ![My NSL](/assets/nsl.png)
 
-Excited about how fast everything was set up and configured, I threw my shiny, new public IP at my browser of choise just to be completely shattered.
+Excited about how fast everything was set up and configured, I threw my shiny, new public IP at my browser of choice just to be completely shattered.
 It did not work. I was expecting some default nginx welcome page but my browser would just return errors.
 
 I checked the nginc config on the server, made sure I could do a curl on the localhost. All and everything was working - as long as I was doing the test on the actual server.
