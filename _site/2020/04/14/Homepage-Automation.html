@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Homepage Automation Workflow | delphi.hafur.com</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Homepage Automation Workflow" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My new setup is running pretty stable so far. As mentioned before, my homepage is now fully hosted on an always free compute instance on Oracle Cloud Infrastructure. There was no downtime and I do not eperience any performace challanges. However, I am pretty certain that people from Australia will definitley experience slower performance than someone in Germany. As of now I am running the compute instance in the Frankfurt OCI Region. Plan is to eventally set up another compute instance (you get 2 always free instances in OCI) in another region (maybe Australia or US) and then use the Traffic Management Steering Policies Service to route traffic based on the geographical region of a request - that is something for the future." />
+<meta property="og:description" content="My new setup is running pretty stable so far. As mentioned before, my homepage is now fully hosted on an always free compute instance on Oracle Cloud Infrastructure. There was no downtime and I do not eperience any performace challanges. However, I am pretty certain that people from Australia will definitley experience slower performance than someone in Germany. As of now I am running the compute instance in the Frankfurt OCI Region. Plan is to eventally set up another compute instance (you get 2 always free instances in OCI) in another region (maybe Australia or US) and then use the Traffic Management Steering Policies Service to route traffic based on the geographical region of a request - that is something for the future." />
+<link rel="canonical" href="delphi.hafur.com/2020/04/14/Homepage-Automation.html" />
+<meta property="og:url" content="delphi.hafur.com/2020/04/14/Homepage-Automation.html" />
+<meta property="og:site_name" content="delphi.hafur.com" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-14T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Homepage Automation Workflow" />
+<script type="application/ld+json">
+{"url":"delphi.hafur.com/2020/04/14/Homepage-Automation.html","headline":"Homepage Automation Workflow","dateModified":"2020-04-14T00:00:00+02:00","datePublished":"2020-04-14T00:00:00+02:00","description":"My new setup is running pretty stable so far. As mentioned before, my homepage is now fully hosted on an always free compute instance on Oracle Cloud Infrastructure. There was no downtime and I do not eperience any performace challanges. However, I am pretty certain that people from Australia will definitley experience slower performance than someone in Germany. As of now I am running the compute instance in the Frankfurt OCI Region. Plan is to eventally set up another compute instance (you get 2 always free instances in OCI) in another region (maybe Australia or US) and then use the Traffic Management Steering Policies Service to route traffic based on the geographical region of a request - that is something for the future.","mainEntityOfPage":{"@type":"WebPage","@id":"delphi.hafur.com/2020/04/14/Homepage-Automation.html"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="delphi.hafur.com/feed.xml" title="delphi.hafur.com" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">delphi.hafur.com</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Homepage Automation Workflow</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-04-14T00:00:00+02:00" itemprop="datePublished">Apr 14, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>My new setup is running pretty stable so far. As mentioned before, my homepage is now fully hosted on an always free compute instance on Oracle Cloud Infrastructure.
+There was no downtime and I do not eperience any performace challanges. However, I am pretty certain that people from Australia will definitley experience slower performance than someone in Germany. As of now I am running the compute instance in the Frankfurt OCI Region. 
+Plan is to eventally set up another compute instance (you get 2 always free instances in OCI) in another region (maybe Australia or US) and then use the <a href="https://docs.oracle.com/en-us/iaas/Content/TrafficManagement/Concepts/overview.htm">Traffic Management Steering Policies Service</a> to route traffic based on the geographical region of a request - that is something for the future.</p>
+
+<h3 id="the-issue">The Issue</h3>
+<p>In this post, I want to discuss how I automated my homepage. My homepage is very simple: just a list of photos. You can click on the thumbmnail to see a larger version of the photo. The larger version displays the location of where the photo was taken.
+It is plain simple static HTML code using CSS for the styling and a bit of JavaScript to enable the effect when moving over the thubmnail and also to create the overlay to view the larger version of a photo.</p>
+
+<p>As plain as simple as it is - there is a major pain: whenever I want to add a new photo, I have to update the html code. It is a fairly simple update (copy and paste - literally) but nevertheless it is a very annoying process. Since the actual manual effort required is to plain simple, I thought there must be a way that <em>even I</em> should be able to come up with a more automated soution.</p>
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>The manual process comprises two steps:</p>
+<ol>
+  <li>Manual upload of new photos to folder on web server via ftp</li>
+  <li>Update html to include the new photos</li>
+</ol>
+
+<p>In my mind, the automation should work like this:</p>
+<ol>
+  <li>Upload photos to web server via ftp</li>
+  <li>Html code is automatically updated</li>
+</ol>
+
+<p>Because step 1 is actually a little bit of a security concern (I dont want to expose my web server on port 21), I came up with this final process:</p>
+<ol>
+  <li>Upload photos to a <em>input</em> folder via ftp</li>
+  <li>A script copies the new photos to the web server</li>
+  <li>Same script will also generate the new html code</li>
+</ol>
+
+<p>Something like this:
+<img src="/assets/20200414/hafurflow.png" alt="homepage automation" /></p>
+
+<h4 id="the-script">The Script</h4>
+
+<p>The script is a mix of Python and bash code. 
+The Python script manages the generation of the html code. The main work is done using the <a href="https://pypi.org/project/dominate/">dominate library</a> which is a Python library for creating and manipulating HTML documents.</p>
+
+<p>For example, the header part of my home page is generated by these few lines of Python code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import dominate, glob, os
+from dominate.tags import *
+
+doc = dominate.document(title='hafur.com | photos of the world unite!')
+
+with doc.head:
+meta(name='Description', content='Photos of the world unite! Photos from different places in the world united on one web page.')
+meta(charset='utf-8')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+link(rel='stylesheet', href='assets/css/main.css')
+.
+.
+.
+</code></pre></div></div>
+
+<p>The actual gallery is emmbedded in a <code class="language-plaintext highlighter-rouge">section</code> element using several <code class="language-plaintext highlighter-rouge">div</code>elements. So in the manual old world, this is were I had top copy&amp;paste some new <code class="language-plaintext highlighter-rouge">div</code> elements and add the proper link to the new photo.
+That is the part which is now automated by the following <code class="language-plaintext highlighter-rouge">for</code> loop:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in reversed(sorted(glob.glob("/webserver/images/fulls/*"), key=os.path.getmtime)):
+    _media_div = _cont_div.add(div(cls='media all place'))
+    _photo = _media_div.add(a(href='%s' % i[14:]))
+    _src = _photo.add(img(src=i.replace('fulls' , 'thumbs')[14:],title=os.path.basename(i)[9:-4]))
+</code></pre></div></div>
+<p>What happens here is that the script looks at all photos in the <code class="language-plaintext highlighter-rouge">fulls</code> directory on my web server and creates for each image the required <code class="language-plaintext highlighter-rouge">div</code> elements. Furthermore, it uses thumbnails for efficiency which are located in the <code class="language-plaintext highlighter-rouge">thumbs</code> directory - the script replaces simply the word <code class="language-plaintext highlighter-rouge">fulls</code> with <code class="language-plaintext highlighter-rouge">thumbs</code> (the filenames are the same).
+Finally, it uses the filename of each photo to generate the title (which is displayed when clicking on a thumbnail). All photos have the same filename pattern: <code class="language-plaintext highlighter-rouge">YYYYMMDD_City, Country.jpg</code>.
+So the title is the filename minus the date and the filename extension: <code class="language-plaintext highlighter-rouge">City, Country</code>.</p>
+
+<p>The whole Python script is wrapped by a bash script which moves the images files from the ftp input directory to the web server directory. And that’s it folks!</p>
+
+<p>Now, I upload new photos including a custom made thumbnail via ftp to my compute instance and then start my <code class="language-plaintext highlighter-rouge">update.sh</code> script which takes care of the html code updates and that the files are located in the right directory.</p>
+
+  </div><a class="u-url" href="/2020/04/14/Homepage-Automation.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">delphi.hafur.com</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">delphi.hafur.com</li><li><a class="u-email" href="mailto:delphi@hafur.com">delphi@hafur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/hafur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">hafur</span></a></li><li><a href="https://www.twitter.com/kevinhafur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">kevinhafur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Random thoughts about random stuff.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
